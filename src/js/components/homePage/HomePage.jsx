@@ -8,19 +8,11 @@ import MainWrapper from "../styles/MainWrapper";
 import * as titleActions from "../../state/actions/titleActions";
 
 const HomePage = ({ titles, selectedTitle, changeTitle, getTitles }) => {
-	if (titles.length <= 0) {
-		getTitles();
-	}
-
-	return (
+		return (
 		<MainWrapper>
-			<Title title={selectedTitle} />
-			<Button handleClick={changeTitle} text="Change Title" />
-			<ul>
-				{titles.map((title, i) => (
-					<li key={i}>{title}</li>
-				))}
-			</ul>
+			<Form />
+			<Cart />
+			<Phone />
 		</MainWrapper>
 	);
 };

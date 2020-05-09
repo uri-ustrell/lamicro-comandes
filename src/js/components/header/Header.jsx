@@ -6,8 +6,7 @@ import HeaderTitle from "../styles/HeaderTitle";
 const Header = () => (
 	<HeaderWrapper>
 		<HeaderLogo />
-		<HeaderTitle />
-		<h1>Fes la teva comanda de cervesa!</h1>
+		<HeaderTitle>Fes la teva comanda de cervesa!</HeaderTitle>
 	</HeaderWrapper>
 );
 
