@@ -1,0 +1,21 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["testing-library", "react"],
+	"rules": {
+		"testing-library/await-async-query": "error",
+		"testing-library/no-await-sync-query": "error",
+		"testing-library/no-debug": "warn",
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error"
+	},
+	"extends": ["eslint:recommended", "plugin:testing-library/react"],
+	"env": {
+		"jest": true
+	}
+}

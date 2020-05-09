@@ -1,0 +1,2 @@
+export const CHANGE_TITLE = "CHANGE_TITLE";
+export const GET_TITLES_SUCCESS = "GET_TITLES_SUCCESS";
