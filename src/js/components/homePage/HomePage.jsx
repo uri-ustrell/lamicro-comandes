@@ -1,14 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Title from "./Title.jsx";
-import Button from "../shared/Button.jsx";
 import MainWrapper from "../styles/MainWrapper";
 import * as titleActions from "../../state/actions/titleActions";
 
 const HomePage = ({ titles, selectedTitle, changeTitle, getTitles }) => {
-		return (
+	return (
 		<MainWrapper>
 			<Form />
 			<Cart />
