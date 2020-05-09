@@ -1,8 +1,14 @@
 import React from "react";
-import Menu from "./Menu.jsx";
+import HeaderWrapper from "../styles/HeaderWrapper";
+import HeaderLogo from "../styles/HeaderLogo";
+import HeaderTitle from "../styles/HeaderTitle";
 
-const pages = ["Home", "Secondary"];
-
-const Header = () => <Menu pages={pages} />;
+const Header = () => (
+	<HeaderWrapper>
+		<HeaderLogo />
+		<HeaderTitle />
+		<h1>Fes la teva comanda de cervesa!</h1>
+	</HeaderWrapper>
+);
 
 export default Header;

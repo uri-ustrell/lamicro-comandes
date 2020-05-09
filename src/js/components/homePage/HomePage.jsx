@@ -4,15 +4,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Title from "./Title.jsx";
 import Button from "../shared/Button.jsx";
+import MainWrapper from "../styles/MainWrapper";
 import * as titleActions from "../../state/actions/titleActions";
-
-const Wrapper = styled.div`
-	margin: 25px auto;
-	max-width: 300px;
-	padding: 10px;
-	border: 1px solid lightgrey;
-	text-align: center;
-`;
 
 const HomePage = ({ titles, selectedTitle, changeTitle, getTitles }) => {
 	if (titles.length <= 0) {
@@ -20,7 +13,7 @@ const HomePage = ({ titles, selectedTitle, changeTitle, getTitles }) => {
 	}
 
 	return (
-		<Wrapper>
+		<MainWrapper>
 			<Title title={selectedTitle} />
 			<Button handleClick={changeTitle} text="Change Title" />
 			<ul>
@@ -28,7 +21,7 @@ const HomePage = ({ titles, selectedTitle, changeTitle, getTitles }) => {
 					<li key={i}>{title}</li>
 				))}
 			</ul>
-		</Wrapper>
+		</MainWrapper>
 	);
 };
 
