@@ -46,7 +46,7 @@ const Form = ({
 			selected={selectedPayment}
 			setPayment={choosePaymentMethod}
 		/>
-		<BeersSelector beers={beers} setBeer={addBeerToCart} />
+		<BeersSelector beers={beers} addBeer={addBeerToCart} />
 	</FormWrapper>
 );
 
