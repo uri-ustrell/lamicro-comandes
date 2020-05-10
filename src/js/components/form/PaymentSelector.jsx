@@ -8,7 +8,7 @@ const PaymentSelector = ({ methods, selected, setPayment }) => (
 			<Button
 				key={method.id}
 				text={method.name}
-				handleClick={setPayment}
+				handleClick={() => setPayment(method.id)}
 				isPressed={method.id === selected}
 			/>
 		))}

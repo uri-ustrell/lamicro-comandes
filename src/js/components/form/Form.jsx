@@ -67,16 +67,18 @@ Form.propTypes = {
 	addRecycledBottles: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state /* , ownProps */) => ({
-	beers: state.form.beers,
-	scheduleTakeAway: state.form.scheduleTakeAway,
-	paymentMethods: state.form.paymentMethods,
-	deliveryMethods: state.form.deliveryMethods,
-	selectedPayment: state.form.selectedPayment,
-	selectedDelivery: state.form.selectedDelivery,
-	selectedSchedule: state.form.selectedSchedule,
-	adress: state.form.adress,
-});
+const mapStateToProps = (state /* , ownProps */) => {
+	return {
+		beers: state.form.beers,
+		scheduleTakeAway: state.form.scheduleTakeAway,
+		paymentMethods: state.form.paymentMethods,
+		deliveryMethods: state.form.deliveryMethods,
+		selectedPayment: state.form.selectedPayment,
+		selectedDelivery: state.form.selectedDelivery,
+		selectedSchedule: state.form.selectedSchedule,
+		adress: state.form.adress,
+	};
+};
 
 const mapDispatchToProps = {
 	chooseDeliveryMethod: formActions.chooseDeliveryMethod,

@@ -8,7 +8,7 @@ const DeliverySelector = ({ methods, selected, setDelivery }) => (
 			<Button
 				key={method.id}
 				text={method.name}
-				handleClick={setDelivery}
+				handleClick={() => setDelivery(method.id)}
 				isPressed={method.id === selected}
 			/>
 		))}

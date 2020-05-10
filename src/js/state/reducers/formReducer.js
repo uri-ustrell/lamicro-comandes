@@ -17,7 +17,7 @@ export const reducers = {
 	[types.CHOOSE_PICKUP_TIME]: (state, action) => {
 		return {
 			...state,
-			selectedSchedule: action.selectedPayment,
+			selectedSchedule: action.selectedSchedule,
 		};
 	},
 	[types.INPUT_ADRESS]: (state, action) => {

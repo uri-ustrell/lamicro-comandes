@@ -41,8 +41,8 @@ const initialState = {
 		{ id: 2, name: "porteu-m'ho a casa" },
 	],
 	scheduleTakeAway: [
-		{ day: 1, dayName: "dilluns", periods: [[]] },
-		{ day: 2, dayName: "dimarts", periods: [[]] },
+		{ day: 1, dayName: "dilluns", periods: [] },
+		{ day: 2, dayName: "dimarts", periods: [] },
 		{ day: 3, dayName: "dimecres", periods: [[17, 20]] },
 		{ day: 4, dayName: "dijous", periods: [[17, 20]] },
 		{ day: 5, dayName: "divendres", periods: [[17, 20]] },

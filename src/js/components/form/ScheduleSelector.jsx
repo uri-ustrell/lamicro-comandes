@@ -14,7 +14,6 @@ const PeriodOptions = (period) => {
 };
 
 const calculateTimeValueAndDisplay = (n, i) => {
-	debugger;
 	let v = n + i;
 	const isEvenIndex = i % 2 === 0;
 	v = i !== 0 && isEvenIndex ? v - 1 : v;
@@ -29,7 +28,7 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 	const [selectedDay, setSelectedDay] = useState(selected.day);
 
 	const handleDayChange = (e) => {
-		setSelectedDay(e.target.value);
+		setSelectedDay(parseInt(e.target.value, 10));
 	};
 
 	const handleScheduleChange = (e) => {
@@ -39,11 +38,14 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 	return (
 		<>
 			<select onChange={handleDayChange} value={selectedDay}>
-				{schedule.map((s) => (
-					<option key={s.day} value={s.day}>
-						{s.dayName}
-					</option>
-				))}
+				{schedule.map(
+					(s) =>
+						s.periods.length && (
+							<option key={s.day} value={s.day}>
+								{s.dayName}
+							</option>
+						)
+				)}
 			</select>
 			<select onChange={handleScheduleChange}>
 				{schedule.find((s) => s.day === selectedDay).periods.map(PeriodOptions)}

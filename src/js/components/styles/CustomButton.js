@@ -9,7 +9,7 @@ const CustomButton = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		background-color: lightgrey;
+		border-color: brown;
 	}
 `;
 
