@@ -1,7 +1,9 @@
 import React from "react";
+import ButtonSelectorWrapper from "../styles/ButtonSelectorWrapper";
+import Button from "../shared/Button.jsx";
 
 const PaymentSelector = ({ methods, selected, setPayment }) => (
-	<SelectorWrapper>
+	<ButtonSelectorWrapper>
 		{methods.map((method) => (
 			<Button
 				key={method.id}
@@ -10,7 +12,7 @@ const PaymentSelector = ({ methods, selected, setPayment }) => (
 				isPressed={method.id === selected}
 			/>
 		))}
-	</SelectorWrapper>
+	</ButtonSelectorWrapper>
 );
 
 export default PaymentSelector;

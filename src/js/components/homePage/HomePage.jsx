@@ -1,8 +1,8 @@
 import React from "react";
 import MainWrapper from "../styles/MainWrapper";
-import Form from "../form/Form";
-import Cart from "../cart/Cart";
-import Phone from "../phone/Phone";
+import Form from "../form/Form.jsx";
+import Cart from "../cart/Cart.jsx";
+import Phone from "../phone/Phone.jsx";
 
 const HomePage = () => {
 	return (

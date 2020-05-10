@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 
-const buildPeriodOptions = (period) => {
+const PeriodOptions = (period) => {
 	const n = (period[1] - period[0]) * 2 - 1;
 
-	Array(n).map((_, i) => {
-		const v = period[0] + i;
-		const value = v % 2 === 0 ? v : v - 0.5;
-		const units = v % 2 === 0 ? v : v - 1;
-		const isDecimal = v % 2 === 0;
+	return [...Array(n)].map((_, i) => {
+		const { value, display } = calculateTimeValueAndDisplay(period[0], i);
 		return (
-			<option value={value}>{`${units}:${isDecimal ? "30" : "00"}`}</option>
+			<option key={value} value={value}>
+				{display}
+			</option>
 		);
 	});
+};
+
+const calculateTimeValueAndDisplay = (n, i) => {
+	debugger;
+	let v = n + i;
+	const isEvenIndex = i % 2 === 0;
+	v = i !== 0 && isEvenIndex ? v - 1 : v;
+	const value = isEvenIndex ? v : v - 0.5;
+	const units = isEvenIndex ? v : v - 1;
+	const isDecimal = !isEvenIndex;
+
+	return { value, display: `${units}:${isDecimal ? "30" : "00"}` };
 };
 
 const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
@@ -27,17 +38,15 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 
 	return (
 		<>
-			<select onChange={handleDayChange}>
+			<select onChange={handleDayChange} value={selectedDay}>
 				{schedule.map((s) => (
-					<option value={s.day} selected={selectedDay === s.day}>
-						{s.dayname}
+					<option key={s.day} value={s.day}>
+						{s.dayName}
 					</option>
 				))}
 			</select>
 			<select onChange={handleScheduleChange}>
-				{schedule
-					.find((s) => s.day === selectedDay)
-					.periods.map(buildPeriodOptions)}
+				{schedule.find((s) => s.day === selectedDay).periods.map(PeriodOptions)}
 			</select>
 		</>
 	);

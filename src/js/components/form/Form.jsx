@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import formActions from "../../state/actions/formActions";
-import cartActions from "../../state/actions/cartActions";
+import * as formActions from "../../state/actions/formActions";
+import * as cartActions from "../../state/actions/cartActions";
 import FormWrapper from "../styles/FormWrapper";
 import DeliverySelector from "./DeliverySelector.jsx";
 import ScheduleSelector from "./ScheduleSelector.jsx";
 import PaymentSelector from "./PaymentSelector.jsx";
 import BeersSelector from "./BeersSelector.jsx";
-import TextInput from "../shared/TextInput";
+import TextInput from "../shared/TextInput.jsx";
 
 const Form = ({
 	beers,

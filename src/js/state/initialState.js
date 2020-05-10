@@ -43,11 +43,25 @@ const initialState = {
 	scheduleTakeAway: [
 		{ day: 1, dayName: "dilluns", periods: [[]] },
 		{ day: 2, dayName: "dimarts", periods: [[]] },
-		{ day: 3, dayName: "dimecres", periods: [[17 - 20]] },
-		{ day: 4, dayName: "dijous", periods: [[17 - 20]] },
-		{ day: 5, dayName: "divendres", periods: [[17 - 20]] },
-		{ day: 6, dayName: "dissabte", periods: [[11 - 13], [17 - 20]] },
-		{ day: 7, dayName: "diumenge", periods: [[11 - 13], [17 - 20]] },
+		{ day: 3, dayName: "dimecres", periods: [[17, 20]] },
+		{ day: 4, dayName: "dijous", periods: [[17, 20]] },
+		{ day: 5, dayName: "divendres", periods: [[17, 20]] },
+		{
+			day: 6,
+			dayName: "dissabte",
+			periods: [
+				[11, 13],
+				[17, 20],
+			],
+		},
+		{
+			day: 7,
+			dayName: "diumenge",
+			periods: [
+				[11, 13],
+				[17, 20],
+			],
+		},
 	],
 	cart: {
 		beers: [],
