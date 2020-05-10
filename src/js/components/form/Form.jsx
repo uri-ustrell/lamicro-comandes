@@ -27,17 +27,26 @@ const Form = ({
 	addRecycledBottles,
 }) => (
 	<FormWrapper>
-		<DeliverySelector methods={deliveryMethods} selected={selectedDelivery} />
+		<DeliverySelector
+			methods={deliveryMethods}
+			selected={selectedDelivery}
+			setDelivery={chooseDeliveryMethod}
+		/>
 		{selectedDelivery === 1 ? (
 			<ScheduleSelector
 				schedule={scheduleTakeAway}
 				selected={selectedSchedule}
+				setSchedule={choosePickUpTime}
 			/>
 		) : (
 			<TextInput value={adress} setValue={inputAdress} />
 		)}
-		<PaymentSelector methods={paymentMethods} selected={selectedPayment} />
-		<BeersSelector beers={beers} />
+		<PaymentSelector
+			methods={paymentMethods}
+			selected={selectedPayment}
+			setPayment={choosePaymentMethod}
+		/>
+		<BeersSelector beers={beers} setBeer={addBeerToCart} />
 	</FormWrapper>
 );
 

@@ -55,7 +55,7 @@ const initialState = {
 	},
 	selectedPayment: 1,
 	selectedDelivery: 1,
-	selectedSchedule: { day: 4, dayName: "dijous", time: 17.5 },
+	selectedSchedule: { day: 4, time: 17.5 },
 	adress: "",
 	message: "",
 };
