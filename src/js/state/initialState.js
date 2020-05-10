@@ -1,6 +1,4 @@
 const initialState = {
-	titles: [],
-	selectedTitle: "Number 0",
 	beers: [
 		{
 			id: 1,
@@ -57,7 +55,9 @@ const initialState = {
 	},
 	selectedPayment: 1,
 	selectedDelivery: 1,
+	selectedSchedule: { day: 4, dayName: "dijous", time: 17.5 },
 	adress: "",
+	message: "",
 };
 
 export default initialState;

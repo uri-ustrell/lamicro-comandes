@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import { titleReducer as title } from "./titleReducer";
+import { formReducer as form } from "./formReducer";
+import { cartReducer as cart } from "./cartReducer";
 
 const rootReducer = combineReducers({
-	title,
+	form,
+	cart,
 });
 
 export default rootReducer;
