@@ -5,6 +5,7 @@ const ButtonSelectorWrapper = styled.div`
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 10px;
 `;
 
 export default ButtonSelectorWrapper;

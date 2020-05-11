@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ButtonSelectorWrapper from "../styles/ButtonSelectorWrapper";
 
 const PeriodOptions = (period) => {
 	const n = (period[1] - period[0]) * 2 - 1;
@@ -36,7 +37,7 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 	};
 
 	return (
-		<>
+		<ButtonSelectorWrapper>
 			<select onChange={handleDayChange} value={selectedDay}>
 				{schedule.map(
 					(s) =>
@@ -50,7 +51,7 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 			<select onChange={handleScheduleChange}>
 				{schedule.find((s) => s.day === selectedDay).periods.map(PeriodOptions)}
 			</select>
-		</>
+		</ButtonSelectorWrapper>
 	);
 };
 

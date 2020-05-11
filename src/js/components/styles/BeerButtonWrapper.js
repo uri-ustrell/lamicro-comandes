@@ -7,7 +7,9 @@ const BeerButtonWrapper = styled.div`
 	align-items: center;
 	background: lightsalmon;
 	border: 5px solid lightgray;
-	border-radius: 5px;
+	border-radius: 15px;
+	cursor: pointer;
+	margin: 10px;
 
 	&:hover {
 		border-color: brown;
