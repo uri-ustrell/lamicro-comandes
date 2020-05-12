@@ -73,6 +73,7 @@ const initialState = {
 	selectedSchedule: { day: 4, time: 17.5 },
 	adress: "",
 	message: "",
+	contact: { name: "La Microcervesaria", number: 699432572 },
 };
 
 export default initialState;
