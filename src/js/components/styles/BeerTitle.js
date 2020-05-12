@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BeerButtonWrapper = styled.span`
+const BeerTitle = styled.span`
 	text-align: center;
 	background: tomato;
 	color: white;
@@ -9,4 +9,4 @@ const BeerButtonWrapper = styled.span`
 	padding: 2px 5px;
 `;
 
-export default BeerButtonWrapper;
+export default BeerTitle;

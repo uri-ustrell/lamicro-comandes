@@ -64,8 +64,9 @@ const initialState = {
 		},
 	],
 	cart: {
-		beers: [],
+		selectedBeers: [],
 		recycledBottles: 0,
+		cost: 0,
 	},
 	selectedPayment: 1,
 	selectedDelivery: 1,

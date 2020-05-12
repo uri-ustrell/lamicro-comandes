@@ -1,3 +1,5 @@
 import React from "react";
-const Phone = () => <h3>Phone component</h3>;
+import PhoneWrapper from "../styles/PhoneWrapper";
+
+const Phone = () => <PhoneWrapper>Phone component</PhoneWrapper>;
 export default Phone;

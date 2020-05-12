@@ -7,10 +7,11 @@ const BeerSelector = ({ beers, addBeer }) => (
 		{beers.map((beer) => (
 			<BeerButton
 				key={beer.id}
+				beerId={beer.id}
 				name={beer.name}
 				description={beer.description}
 				color={beer.color}
-				onClick={() => addBeer(beer.id)}
+				handleClick={addBeer}
 			/>
 		))}
 	</ButtonSelectorWrapper>

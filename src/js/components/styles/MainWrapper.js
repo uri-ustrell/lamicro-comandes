@@ -4,13 +4,12 @@ const MainWrapper = styled.div`
 	margin: 25px auto;
 	max-width: 1200px;
 	padding: 10px;
-	background: rgb(255, 170, 0);
-	background: linear-gradient(
-		0deg,
-		rgba(255, 170, 0, 1) 0%,
-		rgba(255, 249, 236, 1) 83%,
-		rgba(255, 255, 255, 1) 85%
-	);
+	display: grid;
+	grid-template-areas: "form" "cart" "phone";
+
+	@media (min-width: 768px) {
+		grid-template-areas: "form phone" "cart phone";
+	}
 `;
 
 export default MainWrapper;

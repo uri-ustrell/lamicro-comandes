@@ -5,13 +5,25 @@ export const reducers = {
 	[types.ADD_BEER_TO_CART]: (state, action) => {
 		return {
 			...state,
-			beers: [...state.beers, action.beer],
+			selectedBeers: [...state.selectedBeers, action.beer],
 		};
 	},
 	[types.ADD_RECYCLED_BOOTLE_TO_CART]: (state, action) => {
 		return {
 			...state,
 			recycledBottles: ++recycledBottles,
+		};
+	},
+	[types.REMOVE_BEER_FROM_CART]: (state, action) => {
+		return {
+			...state,
+			selectedBeers: state.selectedBeers.filter((b) => b !== action.beer),
+		};
+	},
+	[types.REMOVE_RECYCLED_BOOTLE_FROM_CART]: (state, action) => {
+		return {
+			...state,
+			recycledBottles: --recycledBottles,
 		};
 	},
 };
