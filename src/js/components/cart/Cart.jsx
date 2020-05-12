@@ -40,7 +40,6 @@ Cart.propTypes = {
 };
 
 const mapStateToProps = (state /* , ownProps */) => {
-	debugger;
 	return {
 		cost: state.cart.cost,
 		selectedBeers: state.cart.selectedBeers,

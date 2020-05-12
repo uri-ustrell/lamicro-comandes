@@ -11,9 +11,9 @@ const CartBeers = ({
 	const bottles = beers.reduce((acc, curr) => {
 		const filtered = acc.filter((b) => b.id !== curr.id);
 
-		if (filtered.length < curr.length) {
+		if (filtered.length < acc.length) {
 			const currAmount = acc.find((b) => b.id === curr.id).amount;
-			return [...filtered, { ...curr, amount: ++currAmount }];
+			return [...filtered, { ...curr, amount: currAmount + 1 }];
 		}
 
 		return [...acc, { ...curr, amount: 1 }];
@@ -21,7 +21,7 @@ const CartBeers = ({
 	return (
 		<CartBeersWrapper>
 			{bottles.map((b) => (
-				<CartBottle bottle={b} onClick={() => handleRemoveBeer(b.id)} />
+				<CartBottle bottle={b} handleClick={handleRemoveBeer} key={b.id} />
 			))}
 			{recycledBottles > 0 && (
 				<CartBottle
@@ -29,14 +29,11 @@ const CartBeers = ({
 						amount: recycledBottles,
 						name: "ampolla reciclada",
 						color: "empty",
+						id: 0,
 					}}
+					handleClick={handleRemoveRecycledBottle}
 				/>
 			)}
-			<img
-				src={`./bottle_empty`}
-				alt="ampolla buida"
-				onClick={() => handleRemoveRecycledBottle()}
-			/>
 		</CartBeersWrapper>
 	);
 };

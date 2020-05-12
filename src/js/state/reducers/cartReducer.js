@@ -15,9 +15,13 @@ export const reducers = {
 		};
 	},
 	[types.REMOVE_BEER_FROM_CART]: (state, action) => {
+		const index = state.selectedBeers.indexOf(action.beer);
 		return {
 			...state,
-			selectedBeers: state.selectedBeers.filter((b) => b !== action.beer),
+			selectedBeers: [
+				...state.selectedBeers.slice(0, index),
+				...state.selectedBeers.slice(index + 1),
+			],
 		};
 	},
 	[types.REMOVE_RECYCLED_BOOTLE_FROM_CART]: (state, action) => {
