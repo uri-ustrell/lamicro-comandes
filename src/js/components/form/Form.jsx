@@ -24,7 +24,7 @@ const Form = ({
 	choosePaymentMethod,
 	choosePickUpTime,
 	addBeerToCart,
-	addRecycledBottles,
+	addRecycledBottle,
 }) => (
 	<FormWrapper>
 		<DeliverySelector
@@ -46,7 +46,11 @@ const Form = ({
 			selected={selectedPayment}
 			setPayment={choosePaymentMethod}
 		/>
-		<BeersSelector beers={beers} addBeer={addBeerToCart} />
+		<BeersSelector
+			beers={beers}
+			addBeer={addBeerToCart}
+			addEmptyBottle={addRecycledBottle}
+		/>
 	</FormWrapper>
 );
 
@@ -64,7 +68,7 @@ Form.propTypes = {
 	choosePaymentMethod: PropTypes.func.isRequired,
 	choosePickUpTime: PropTypes.func.isRequired,
 	addBeerToCart: PropTypes.func.isRequired,
-	addRecycledBottles: PropTypes.func.isRequired,
+	addRecycledBottle: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state /* , ownProps */) => {
@@ -86,7 +90,7 @@ const mapDispatchToProps = {
 	choosePickUpTime: formActions.choosePickUpTime,
 	inputAdress: formActions.inputAdress,
 	addBeerToCart: cartActions.addBeerToCart,
-	addRecycledBottles: cartActions.addRecycledBottles,
+	addRecycledBottle: cartActions.addRecycledBottle,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -7,7 +7,7 @@ export const removeBeerFromCart = (beer) => ({
 	beer,
 });
 
-export const addRecycledBottles = () => ({
+export const addRecycledBottle = () => ({
 	type: types.ADD_RECYCLED_BOOTLE_TO_CART,
 });
 

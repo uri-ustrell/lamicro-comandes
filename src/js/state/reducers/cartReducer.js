@@ -11,7 +11,7 @@ export const reducers = {
 	[types.ADD_RECYCLED_BOOTLE_TO_CART]: (state, action) => {
 		return {
 			...state,
-			recycledBottles: ++recycledBottles,
+			recycledBottles: state.recycledBottles + 1,
 		};
 	},
 	[types.REMOVE_BEER_FROM_CART]: (state, action) => {
@@ -27,7 +27,7 @@ export const reducers = {
 	[types.REMOVE_RECYCLED_BOOTLE_FROM_CART]: (state, action) => {
 		return {
 			...state,
-			recycledBottles: --recycledBottles,
+			recycledBottles: state.recycledBottles - 1,
 		};
 	},
 };

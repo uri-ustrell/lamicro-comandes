@@ -2,7 +2,7 @@ import React from "react";
 import ButtonSelectorWrapper from "../styles/ButtonSelectorWrapper";
 import BeerButton from "./BeerButton.jsx";
 
-const BeerSelector = ({ beers, addBeer }) => (
+const BeerSelector = ({ beers, addBeer, addEmptyBottle }) => (
 	<ButtonSelectorWrapper>
 		{beers.map((beer) => (
 			<BeerButton
@@ -14,6 +14,13 @@ const BeerSelector = ({ beers, addBeer }) => (
 				handleClick={addBeer}
 			/>
 		))}
+		<BeerButton
+			beerId={0}
+			name="Ampolla reciclada"
+			description="Envàs de retorn (-1,5€)"
+			color="empty"
+			handleClick={addEmptyBottle}
+		/>
 	</ButtonSelectorWrapper>
 );
 
