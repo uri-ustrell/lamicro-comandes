@@ -30,6 +30,25 @@ export const reducers = {
 			recycledBottles: state.recycledBottles - 1,
 		};
 	},
+	[types.CALCULATE_CART_PRICE]: (state, action) => {
+		const amountBeers = state.selectedBeers.length;
+
+		if (amountBeers < 2) return state;
+
+		let price = 0;
+
+		if (amountBeers === 2) {
+			price = 11;
+		} else if (amountBeers === 3) {
+			price = 15;
+		} else if (amountBeers > 3) {
+			price = 15 + (amountBeers - 3) * 5;
+		}
+
+		price += 1.5 * amountBeers - 1.5 * state.recycledBottles;
+
+		return { ...state, cost: price > 0 ? price : 0 };
+	},
 };
 
 export const cartReducer = (state = initialState.cart, action) => {

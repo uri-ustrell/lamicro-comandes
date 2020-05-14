@@ -32,9 +32,9 @@ const initialState = {
 		},
 	],
 	paymentMethods: [
-		{ id: 1, name: "bizzum" },
-		{ id: 2, name: "targeta de crèdit" },
-		{ id: 3, name: "metàlic" },
+		{ id: 1, name: "📱 bizzum" },
+		{ id: 2, name: "💳 targeta de crèdit" },
+		{ id: 3, name: "💵 metàlic" },
 	],
 	deliveryMethods: [
 		{ id: 1, name: "ho recullo a la Micro" },

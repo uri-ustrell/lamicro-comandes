@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as cartActions from "../../state/actions/cartActions";
@@ -13,11 +13,17 @@ const Cart = ({
 	removeBeerFromCart,
 	removeRecycledBottleFromCart,
 	beers,
+	calculateCartPrice,
 }) => {
+	useEffect(() => {
+		calculateCartPrice();
+	}, [selectedBeers, recycledBottles, cost]);
+
 	const cartBeers = selectedBeers.reduce(
 		(acc, curr) => [...acc, beers.find((b) => b.id === curr)],
 		[]
 	);
+
 	return (
 		<CartWrapper>
 			<Cost total={cost} />
@@ -37,6 +43,7 @@ Cart.propTypes = {
 	recycledBottles: PropTypes.number.isRequired,
 	removeBeerFromCart: PropTypes.func.isRequired,
 	removeRecycledBottleFromCart: PropTypes.func.isRequired,
+	calculateCartPrice: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state /* , ownProps */) => {
@@ -51,6 +58,7 @@ const mapStateToProps = (state /* , ownProps */) => {
 const mapDispatchToProps = {
 	removeBeerFromCart: cartActions.removeBeerFromCart,
 	removeRecycledBottleFromCart: cartActions.removeRecycledBottleFromCart,
+	calculateCartPrice: cartActions.calculateCartPrice,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

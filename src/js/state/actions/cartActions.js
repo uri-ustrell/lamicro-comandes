@@ -14,3 +14,5 @@ export const addRecycledBottle = () => ({
 export const removeRecycledBottleFromCart = () => ({
 	type: types.REMOVE_RECYCLED_BOOTLE_FROM_CART,
 });
+
+export const calculateCartPrice = () => ({ type: types.CALCULATE_CART_PRICE });
