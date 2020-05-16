@@ -13,6 +13,7 @@ const HeaderInfoButton = styled.div`
 	align-self: stretch;
 	font-size: 18px;
 	font-weight: bold;
+	cursor: pointer;
 `;
 
 export default HeaderInfoButton;
