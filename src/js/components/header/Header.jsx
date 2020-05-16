@@ -34,6 +34,10 @@ const Header = () => {
 					<br />
 					<br />
 					Assegura't de completar bé la informació per poder copiar el missatge.
+					<br />
+					<br />
+					Després d'enviar el missatge via <b>Whatsapp</b> o <b>Telegram</b>, us
+					confirmarem la comanda en el mateix xat.
 				</HeaderInfo>
 			)}
 		</HeaderWrapper>
