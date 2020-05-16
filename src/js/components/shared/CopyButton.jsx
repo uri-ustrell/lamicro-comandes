@@ -23,8 +23,10 @@ const CopyButton = ({ content, available }) => {
 		}
 
 		if (navigator.userAgent.match(/ipad|ipod|iphone|mac/i)) {
+			alert("safari", 1);
 			navigator.clipboard.writeText(content).then(
 				() => {
+					alert("safari", 2);
 					/* Alert user text is copied */
 					setText(copiedText);
 					button.style.backgroundColor = "lightgreen";
@@ -35,6 +37,7 @@ const CopyButton = ({ content, available }) => {
 					}, 3000);
 				},
 				() => {
+					alert("safari", 3);
 					try {
 						const el = document.createElement("textarea");
 						const editableOld = el.contentEditable;
