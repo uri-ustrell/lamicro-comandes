@@ -88,43 +88,10 @@ const CopyButton = ({ content, available }) => {
 
 		if (navigator.userAgent.match(/macintosh/i)) {
 			alert("safari mac 1");
-			navigator.clipboard.writeText(content).then(
-				() => {
-					alert("safari mac 2");
-					/* Alert user text is copied */
-					setText(copiedText);
-					button.style.backgroundColor = "lightgreen";
-
-					setTimeout(() => {
-						setText(initialText);
-						button.style.backgroundColor = "";
-					}, 3000);
-				},
-				() => {
-					try {
-						alert("safari mac 3");
-
-						const el = document.createElement("textarea");
-						const editableOld = el.contentEditable;
-						const readOnlyOld = el.readOnly;
-
-						range = document.createRange();
-
-						el.contentEditable = "true";
-						el.readOnly = "false";
-						range.selectNodeContents(el);
-
-						const s = window.getSelection();
-						s.removeAllRanges();
-						s.addRange(range);
-
-						el.setSelectionRange(0, 999999);
-
-						el.contentEditable = editableOld;
-						el.readOnly = readOnlyOld;
-
-						document.execCommand("copy");
-
+			try {
+				navigator.clipboard.writeText(content).then(
+					() => {
+						alert("safari mac 2");
 						/* Alert user text is copied */
 						setText(copiedText);
 						button.style.backgroundColor = "lightgreen";
@@ -133,13 +100,46 @@ const CopyButton = ({ content, available }) => {
 							setText(initialText);
 							button.style.backgroundColor = "";
 						}, 3000);
-					} catch (e) {
+					},
+					() => {
 						alert(
 							"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
 						);
 					}
-				}
-			);
+				);
+			} catch (error) {
+				alert("safari mac 3");
+
+				const el = document.createElement("textarea");
+				const editableOld = el.contentEditable;
+				const readOnlyOld = el.readOnly;
+
+				range = document.createRange();
+
+				el.contentEditable = "true";
+				el.readOnly = "false";
+				range.selectNodeContents(el);
+
+				const s = window.getSelection();
+				s.removeAllRanges();
+				s.addRange(range);
+
+				el.setSelectionRange(0, 999999);
+
+				el.contentEditable = editableOld;
+				el.readOnly = readOnlyOld;
+
+				document.execCommand("copy");
+
+				/* Alert user text is copied */
+				setText(copiedText);
+				button.style.backgroundColor = "lightgreen";
+
+				setTimeout(() => {
+					setText(initialText);
+					button.style.backgroundColor = "";
+				}, 3000);
+			}
 
 			return;
 		}
