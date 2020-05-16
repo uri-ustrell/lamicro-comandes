@@ -87,8 +87,10 @@ const CopyButton = ({ content, available }) => {
 		}
 
 		if (navigator.userAgent.match(/macintosh/i)) {
+			alert("safari mac 1");
 			navigator.clipboard.writeText(content).then(
 				() => {
+					alert("safari mac 2");
 					/* Alert user text is copied */
 					setText(copiedText);
 					button.style.backgroundColor = "lightgreen";
@@ -100,6 +102,8 @@ const CopyButton = ({ content, available }) => {
 				},
 				() => {
 					try {
+						alert("safari mac 3");
+
 						const el = document.createElement("textarea");
 						const editableOld = el.contentEditable;
 						const readOnlyOld = el.readOnly;
