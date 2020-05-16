@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const FormTextInput = styled.input`
+const FormSelectInput = styled.select`
+	position: relative;
+	display: block;
+	width: 115px;
+	margin: 0 auto;
 	font-size: 18px;
 	background: transparent;
 	border: none;
@@ -8,4 +12,4 @@ const FormTextInput = styled.input`
 	color: var(--text-write-color);
 `;
 
-export default FormTextInput;
+export default FormSelectInput;

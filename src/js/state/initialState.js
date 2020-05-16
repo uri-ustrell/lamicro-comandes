@@ -22,7 +22,7 @@ const initialState = {
 			id: 4,
 			name: "Bruna",
 			description: "Torrada i dolça",
-			color: "brown",
+			color: "red",
 		},
 		{
 			id: 5,

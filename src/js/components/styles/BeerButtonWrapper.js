@@ -4,15 +4,16 @@ const BeerButtonWrapper = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
-	align-items: center;
-	background: lightsalmon;
-	border: 5px solid lightgray;
+	align-items: flex-start;
+	background: var(--passive-color);
 	border-radius: 15px;
 	cursor: pointer;
-	margin: 10px;
+	margin: 50px 10px 10px 10px;
+	padding: 5px 10px;
+	position: relative;
 
 	&:hover {
-		border-color: brown;
+		background: var(--active-color);
 	}
 `;
 

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ButtonSelectorWrapper from "../styles/ButtonSelectorWrapper";
+import FormSelectInput from "../styles/FormSelectInput";
+import FormSelectOption from "../styles/FormSelectOption";
 
 const PeriodOptions = (period) => {
 	const n = (period[1] - period[0]) * 2 - 1;
@@ -7,9 +9,9 @@ const PeriodOptions = (period) => {
 	return [...Array(n)].map((_, i) => {
 		const { value, display } = calculateTimeValueAndDisplay(period[0], i);
 		return (
-			<option key={value} value={value}>
+			<FormSelectOption key={value} value={value}>
 				{display}
-			</option>
+			</FormSelectOption>
 		);
 	});
 };
@@ -38,19 +40,19 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 
 	return (
 		<ButtonSelectorWrapper>
-			<select onChange={handleDayChange} value={selectedDay}>
+			<FormSelectInput onChange={handleDayChange} value={selectedDay}>
 				{schedule.map(
 					(s) =>
 						s.periods.length && (
-							<option key={s.day} value={s.day}>
+							<FormSelectOption key={s.day} value={s.day}>
 								{s.dayName}
-							</option>
+							</FormSelectOption>
 						)
 				)}
-			</select>
-			<select onChange={handleScheduleChange}>
+			</FormSelectInput>
+			<FormSelectInput onChange={handleScheduleChange}>
 				{schedule.find((s) => s.day === selectedDay).periods.map(PeriodOptions)}
-			</select>
+			</FormSelectInput>
 		</ButtonSelectorWrapper>
 	);
 };

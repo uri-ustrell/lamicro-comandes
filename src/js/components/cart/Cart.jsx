@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as cartActions from "../../state/actions/cartActions";
 import CartWrapper from "../styles/CartWrapper";
+import CartMinusSimbol from "../styles/CartMinusSymbol";
+import CartEqualsSimbol from "../styles/CartEqualsSymbol";
 import Cost from "./Cost.jsx";
 import CartBeers from "./CartBeers.jsx";
 
@@ -26,13 +28,24 @@ const Cart = ({
 
 	return (
 		<CartWrapper>
-			<Cost total={cost} />
 			<CartBeers
 				beers={cartBeers}
+				recycledBottles={[]}
+				handleRemoveBeer={removeBeerFromCart}
+				handleRemoveRecycledBottle={removeRecycledBottleFromCart}
+			/>
+			<CartMinusSimbol />
+			<CartBeers
+				beers={[]}
 				recycledBottles={recycledBottles}
 				handleRemoveBeer={removeBeerFromCart}
 				handleRemoveRecycledBottle={removeRecycledBottleFromCart}
 			/>
+			<CartEqualsSimbol>
+				<CartMinusSimbol />
+				<CartMinusSimbol />
+			</CartEqualsSimbol>
+			<Cost total={cost} />
 		</CartWrapper>
 	);
 };

@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 const BeerTitle = styled.span`
 	text-align: center;
-	background: tomato;
-	color: white;
-	border: 2px solid darkkhaki;
-	border-radius: 15px;
+	color: #582405;
 	padding: 2px 5px;
+	font-weight: bold;
+	z-index: 1;
 `;
 
 export default BeerTitle;

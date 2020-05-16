@@ -35,6 +35,10 @@ const PhoneWrapper = styled.div`
 		background: #333;
 		border-radius: 50%;
 	}
+
+	@media (min-width: 768px) {
+		margin-left: 20px;
+	}
 }
 `;
 

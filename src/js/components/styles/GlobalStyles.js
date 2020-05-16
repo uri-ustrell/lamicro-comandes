@@ -1,15 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+	:root{
+		--passive-color: transparent;
+		--active-color: #FFB963;
+		--text-main-color: #444;
+		--text-write-color: #1d0ca5;
+		--text-write-secondary-color: #777;
+	}
+	
+	*{
+		color: var(--text-main-color);
+	}
+
 	body {
 		font-family: 'Roboto', sans-serif;
-		background: rgb(255, 170, 0);
-		background: linear-gradient(
-			0deg,
-			rgba(255, 170, 0, 1) 0%,
-			rgba(255, 249, 236, 1) 83%,
-			rgba(255, 255, 255, 1) 85%
-		);
 	}
 `;
 

@@ -9,13 +9,13 @@ const CopyButtonWrapper = styled.div`
 	align-items: center;
 	cursor: pointer;
 	background-color: lightGray;
-	border: 1px solid gray;
 	float: right;
 	transform: rotate(-45deg);
 	padding: 10px;
 	position: absolute;
 	bottom: 10;
 	right: -60;
+	box-shadow: 1px 1px 5px #777;
 `;
 
 export default CopyButtonWrapper;
