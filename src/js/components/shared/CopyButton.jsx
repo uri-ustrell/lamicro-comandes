@@ -113,28 +113,28 @@ const CopyButton = ({ content, available }) => {
 				const el = document.createElement("textarea");
 				const editableOld = el.contentEditable;
 				const readOnlyOld = el.readOnly;
-
+				alert("safari mac 4");
 				range = document.createRange();
 
 				el.contentEditable = "true";
 				el.readOnly = "false";
 				range.selectNodeContents(el);
-
+				alert("safari mac 5");
 				const s = window.getSelection();
 				s.removeAllRanges();
 				s.addRange(range);
 
 				el.setSelectionRange(0, 999999);
-
+				alert("safari mac 6");
 				el.contentEditable = editableOld;
 				el.readOnly = readOnlyOld;
-
+				alert("safari mac 7");
 				document.execCommand("copy");
-
+				alert("safari mac 8");
 				/* Alert user text is copied */
 				setText(copiedText);
 				button.style.backgroundColor = "lightgreen";
-
+				alert("safari mac 9");
 				setTimeout(() => {
 					setText(initialText);
 					button.style.backgroundColor = "";
