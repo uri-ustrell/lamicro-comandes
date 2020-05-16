@@ -7,17 +7,17 @@ const CartWrapper = styled.div`
 	align-items: center;
 	grid-area: cart;
 	margin-bottom: 20px;
-	padding-left: 100px;
+	padding-left: 25px;
 	padding-bottom: 20px;
 	border-right: 2px solid #eee;
 	border-left: 2px solid #eee;
 
 	background-image: linear-gradient(
 			90deg,
-			transparent 79px,
-			#abced4 79px,
-			#abced4 81px,
-			transparent 81px
+			transparent 20px,
+			#abced4 20px,
+			#abced4 22px,
+			transparent 22px
 		),
 		linear-gradient(#eee 0.1em, transparent 0.1em);
 	background-size: 100% 1.2em;

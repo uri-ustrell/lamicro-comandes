@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PhoneText from "../styles/PhoneText";
 import CopyButton from "../shared/CopyButton.jsx";
 import PhoneTextWrapper from "../styles/PhoneTextWrapper";
 
 const Message = ({ info }) => {
+	const [formatOk, setFormatOk] = useState(false);
+	useEffect(() => {
+		const isPriceOk = info.cart.cost !== 0;
+		const isAdressOK =
+			info.form.selectedDelivery === 2 ? info.form.adress !== "" : true;
+
+		if (isPriceOk && isAdressOK) setFormatOk(true);
+		else setFormatOk(false);
+	}, [info]);
+
 	const selectedBeers = info.cart.selectedBeers.reduce((acc, curr) => {
 		const index = acc.findIndex((b) => b.id === curr);
 
@@ -66,7 +76,7 @@ Gràcies! 🍻
 			<PhoneText>
 				{content.replace(/ \*/gi, " ").replace(/\* /gi, " ")}
 			</PhoneText>
-			<CopyButton content={content} />
+			<CopyButton content={content} available={formatOk} />
 		</PhoneTextWrapper>
 	);
 };

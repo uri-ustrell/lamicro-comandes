@@ -8,7 +8,7 @@ const BeerButtonWrapper = styled.div`
 	background: var(--passive-color);
 	border-radius: 15px;
 	cursor: pointer;
-	margin: 50px 10px 10px 10px;
+	margin: 50px 10px 10px 20px;
 	padding: 5px 10px;
 	position: relative;
 

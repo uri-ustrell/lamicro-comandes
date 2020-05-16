@@ -6,11 +6,14 @@ const CartBeersWrapper = styled.div`
 	justify-content: left;
 	align-items: center;
 	background-color: var(--passive-color);
-	padding: 10px;
-	border: 2px dashed var(--active-color);
 	border-radius: 15px;
 	min-height: 80px;
 	min-width: 26px;
+
+	@media only screen and (min-width: 768px) {
+		border: 2px dashed var(--active-color);
+		padding: 10px;
+	}
 `;
 
 export default CartBeersWrapper;

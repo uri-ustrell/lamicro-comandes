@@ -13,7 +13,7 @@ const App = () => {
 				<Route path="/" component={HomePage} exact />
 				<Route path="/home" component={HomePage} exact />
 				<Route path="/secondary" component={SecondaryPage} exact />
-				<Route component={NotFoundPage} />
+				<Route component={HomePage} />
 			</Switch>
 		</BrowserRouter>
 	);

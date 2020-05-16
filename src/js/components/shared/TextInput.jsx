@@ -5,7 +5,7 @@ import ButtonSelectorWrapper from "../styles/ButtonSelectorWrapper";
 const TextInput = ({ value, setValue }) => (
 	<ButtonSelectorWrapper>
 		<FormTextInput
-			placeholder="C/ de l'Estrella, 93, 08201"
+			placeholder="escriu la teva adreça..."
 			value={value}
 			onChange={(e) => setValue(e.target.value)}
 		/>

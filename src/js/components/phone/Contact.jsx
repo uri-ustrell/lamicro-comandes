@@ -23,7 +23,7 @@ const Contact = () => (
 				699432572
 			</h3>
 		</div>
-		<CopyButton content="699432572" />
+		<CopyButton content="699432572" available={true} />
 	</PhoneContact>
 );
 

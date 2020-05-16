@@ -5,14 +5,14 @@ const PhoneWrapper = styled.div`
 	position: relative;
 	width: 250px;
 	height: 400px;
-	margin: auto;
+	margin-left: 10px;
 	border: 16px black solid;
 	border-top-width: 60px;
 	border-bottom-width: 60px;
 	border-radius: 36px;
-	
-	::before{
-		content: '';
+
+	::before {
+		content: "";
 		display: block;
 		width: 60px;
 		height: 5px;
@@ -21,10 +21,11 @@ const PhoneWrapper = styled.div`
 		left: 50%;
 		transform: translate(-50%, -50%);
 		background: #333;
-		border-radius: 10px;}
-	
-	::after{
-		content: '';
+		border-radius: 10px;
+	}
+
+	::after {
+		content: "";
 		display: block;
 		width: 35px;
 		height: 35px;
@@ -36,10 +37,9 @@ const PhoneWrapper = styled.div`
 		border-radius: 50%;
 	}
 
-	@media (min-width: 768px) {
+	@media only screen and (min-width: 768px) {
 		margin-left: 20px;
 	}
-}
 `;
 
 export default PhoneWrapper;

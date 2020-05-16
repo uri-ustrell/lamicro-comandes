@@ -1,12 +1,14 @@
 {
-	"name": "cyan-books-front-webapp",
+	"name": "la-micro-comandes",
 	"version": "1.0.0",
 	"description": "Cyan Books web application front-end",
 	"main": "index.js",
+	"homepage": "http://uri-ustrell.github.io/lamicro-comandes",
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "webpack-dev-server --open --watch --mode development",
-		"test": "jest --watch"
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"keywords": [
 		"cyanbooks",
@@ -40,6 +42,7 @@
 		"eslint-plugin-jest-dom": "^2.1.0",
 		"eslint-plugin-testing-library": "^3.1.2",
 		"fetch-mock": "^9.4.0",
+		"gh-pages": "^2.2.0",
 		"html-loader": "^1.1.0",
 		"html-webpack-plugin": "^4.2.0",
 		"jest": "^25.3.0",

@@ -6,7 +6,7 @@ module.exports = {
 	entry: "./src/js/index.js",
 	output: {
 		filename: "bundle.js",
-		path: path.join(__dirname, "public"),
+		path: path.join(__dirname, "build"),
 	},
 	module: {
 		rules: [
@@ -28,7 +28,7 @@ module.exports = {
 		],
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "public"),
+		contentBase: path.join(__dirname, "build"),
 		historyApiFallback: true,
 		before: function (app, server, compiler) {
 			app.get("/titles", function (req, res) {

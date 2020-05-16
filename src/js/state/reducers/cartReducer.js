@@ -32,8 +32,7 @@ export const reducers = {
 	},
 	[types.CALCULATE_CART_PRICE]: (state, action) => {
 		const amountBeers = state.selectedBeers.length;
-
-		if (amountBeers < 2) return state;
+		if (amountBeers < 2) return { ...state, cost: 0 };
 
 		let price = 0;
 
