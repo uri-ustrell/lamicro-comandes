@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderInfoButton = styled.div`
-	border: 1px solid var(--text-main-color);
+	border: 3px solid var(--active-color);
 	border-radius: 100%;
 	display: flex;
 	justify-content: center;
@@ -11,6 +11,8 @@ const HeaderInfoButton = styled.div`
 	height: 10px;
 	padding: 10px;
 	align-self: stretch;
+	font-size: 18px;
+	font-weight: bold;
 `;
 
 export default HeaderInfoButton;

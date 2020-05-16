@@ -18,12 +18,16 @@ const Header = () => {
 			</HeaderInfoButton>
 			{infoVisible && (
 				<HeaderInfo>
-					1. Prepara la teva comanda mitjançant les opcions,
+					<b>1.</b> Prepara la teva comanda mitjançant les opcions,
 					<br />
-					2. copia el missatge creat (amb el botó <b>Ctrl+C</b>)<br />
-					3. i envia'l al contacte de La Micro. <br />
+					<b>2.</b> copia el missatge creat (amb el botó <b>Ctrl+C</b>)<br />
+					<b>3.</b> i envia'l per <b>Whatsapp</b> al contacte de <b>La Micro</b>
+					.
+					<br />
 					<br />
 					Les ofertes funcionen de la següent manera:
+					<br />
+					Minim comanda de 2 ampolles.
 					<br />2 ampolles costen 11€
 					<br />3 ampolles costen 15€
 					<br />4 ampolles o més, s'afegeix 5€ per ampolla

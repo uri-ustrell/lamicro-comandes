@@ -21,6 +21,61 @@ const CopyButton = ({ content, available }) => {
 
 			return;
 		}
+
+		if (navigator.userAgent.match(/ipad|ipod|iphone|mac/i)) {
+			navigator.clipboard.writeText(content).then(
+				() => {
+					/* Alert user text is copied */
+					setText(copiedText);
+					button.style.backgroundColor = "lightgreen";
+
+					setTimeout(() => {
+						setText(initialText);
+						button.style.backgroundColor = "";
+					}, 3000);
+				},
+				() => {
+					try {
+						const el = document.createElement("textarea");
+						const editableOld = el.contentEditable;
+						const readOnlyOld = el.readOnly;
+
+						range = document.createRange();
+
+						el.contentEditable = "true";
+						el.readOnly = "false";
+						range.selectNodeContents(el);
+
+						const s = window.getSelection();
+						s.removeAllRanges();
+						s.addRange(range);
+
+						el.setSelectionRange(0, 999999);
+
+						el.contentEditable = editableOld;
+						el.readOnly = readOnlyOld;
+
+						document.execCommand("copy");
+
+						/* Alert user text is copied */
+						setText(copiedText);
+						button.style.backgroundColor = "lightgreen";
+
+						setTimeout(() => {
+							setText(initialText);
+							button.style.backgroundColor = "";
+						}, 3000);
+					} catch (e) {
+						alert(
+							"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
+						);
+					}
+				}
+			);
+
+			return;
+		}
+
 		navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
 			if (result.state == "granted" || result.state == "prompt") {
 				/* write to the clipboard now */
@@ -42,6 +97,8 @@ const CopyButton = ({ content, available }) => {
 					}
 				);
 			}
+
+			return;
 		});
 	};
 

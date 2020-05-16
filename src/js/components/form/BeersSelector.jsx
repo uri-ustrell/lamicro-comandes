@@ -17,7 +17,7 @@ const BeerSelector = ({ beers, addBeer, addEmptyBottle }) => (
 		<BeerButton
 			beerId={0}
 			name="Ampolla reciclada"
-			description="Envàs de retorn (-1,5€)"
+			description="envàs de retorn (-1,5€)"
 			color="empty"
 			handleClick={addEmptyBottle}
 		/>
