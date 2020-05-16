@@ -115,9 +115,11 @@ const CopyButton = ({ content, available }) => {
 				const readOnlyOld = el.readOnly;
 				alert("safari mac 4");
 				range = document.createRange();
-
+				alert("safari mac 4.1");
 				el.contentEditable = "true";
+				alert("safari mac 4.2");
 				el.readOnly = "false";
+				alert("safari mac 4.2");
 				range.selectNodeContents(el);
 				alert("safari mac 5");
 				const s = window.getSelection();
