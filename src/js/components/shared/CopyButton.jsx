@@ -18,10 +18,14 @@ const CopyButton = ({ content, available, hint }) => {
 			setText(badFormatText);
 			setButtonColor(koColor);
 
+			alert(
+				"Per copiar el text de la comanda:\nEl preu ha de ser superior a 0€ (mínim 2 cerveses)\ni s'ha d'emplenar l'adreça en cas de: 'porteu-m'ho a casa'"
+			);
+
 			setTimeout(() => {
 				setText(initialText);
 				setButtonColor(neutralColor);
-			}, 3000);
+			}, 1000);
 
 			return;
 		}
