@@ -1,6 +1,6 @@
 import React from "react";
-import BeerTitle from "../styles/BeerTitle";
 import BottleAmount from "../styles/BottleAmount";
+import AddOrRemoveButton from "../styles/AddOrRemoveButton";
 
 const CartBottle = ({ bottle, handleClick }) => (
 	<div
@@ -8,11 +8,8 @@ const CartBottle = ({ bottle, handleClick }) => (
 		style={{ cursor: "pointer", position: "relative", margin: 5 }}
 		title={bottle.name}
 	>
-		<img
-			src={`./bottle_${bottle.color}.png`}
-			alt={bottle.name}
-			height="70px"
-		/>
+		<AddOrRemoveButton>-</AddOrRemoveButton>
+		<img src={`./bottle_${bottle.color}.png`} alt={bottle.name} height="70px" />
 		{bottle.amount > 1 && <BottleAmount>{bottle.amount}</BottleAmount>}
 		{/* <BeerTitle>{bottle.name}</BeerTitle> */}
 	</div>

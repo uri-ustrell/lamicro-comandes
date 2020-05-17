@@ -2,10 +2,12 @@ import React from "react";
 import BeerButtonWrapper from "../styles/BeerButtonWrapper";
 import BeerTitle from "../styles/BeerTitle";
 import BeerDescription from "../styles/BeerDescription";
+import AddOrRemoveButton from "../styles/AddOrRemoveButton";
 
 const BeerButton = ({ name, description, color, handleClick, beerId }) => (
 	<BeerButtonWrapper onClick={() => handleClick(beerId)}>
 		<BeerTitle>{name}</BeerTitle>
+		<AddOrRemoveButton>+</AddOrRemoveButton>
 		<img
 			src={`./bottle_${color}.png`}
 			alt={name}

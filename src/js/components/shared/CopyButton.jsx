@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CopyButtonWrapper from "../styles/CopyButtonWrapper";
 
-const initialText = "Ctrl+C";
+const initialText = "Copia";
 const copiedText = "copiat!";
 const badFormatText = "X";
 const neutralColor = "lightgray";
@@ -114,7 +114,7 @@ const CopyButton = ({ content, available, hint }) => {
 
 	return (
 		<CopyButtonWrapper onClick={copyText} bgColor={buttonColor}>
-			{text === initialText && <smal>click</smal>}
+			{text === initialText && <small>click</small>}
 			<span>{text}</span>
 			{text === initialText && <small>{hint}</small>}
 		</CopyButtonWrapper>

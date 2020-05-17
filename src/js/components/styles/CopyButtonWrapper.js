@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-const CopyButtonWrapper = styled.div`
+const CopyButtonWrapper = styled.span`
 	border-radius: 100%;
-	width: 50px;
-	height: 50px;
-	display: flex;
+	width: ${({ small }) => (small ? "20px" : "50px")};
+	height: ${({ small }) => (small ? "20px" : "50px")};
+	font-size: ${({ small }) => (small ? "14px" : "")};
+	display: inline-flex;
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
@@ -12,7 +13,7 @@ const CopyButtonWrapper = styled.div`
 	background-color: ${({ bgColor }) => bgColor};
 	transform: rotate(-45deg);
 	padding: 10px;
-	position: absolute;
+	position: ${({ overridePosition }) => (overridePosition ? "" : "absolute")};
 	bottom: 10;
 	right: -60;
 	box-shadow: 1px 1px 5px #777;

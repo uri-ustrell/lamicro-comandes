@@ -32,7 +32,7 @@ const Message = ({ info }) => {
 	const where =
 		info.form.selectedDelivery === 1
 			? "🛒 Us puc passar a buscar"
-			: "🚚 Em podeu portar a casa";
+			: "🚲 Em podeu portar a casa";
 	const beersList = selectedBeers
 		.map((b) => `🍺 *${b.amount} ${b.name}* `)
 		.join("\n\t");
