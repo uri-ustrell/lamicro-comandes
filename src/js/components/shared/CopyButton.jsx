@@ -23,11 +23,9 @@ const CopyButton = ({ content, available }) => {
 		}
 
 		if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-			alert("safari iOS 1");
 			try {
 				navigator.clipboard.writeText(content).then(
 					() => {
-						alert("safari iOS 2");
 						/* Alert user text is copied */
 						setText(copiedText);
 						button.style.backgroundColor = "lightgreen";
@@ -45,8 +43,6 @@ const CopyButton = ({ content, available }) => {
 				);
 			} catch (error) {
 				try {
-					alert("safari iOS 3");
-
 					const el = document.createElement("textarea");
 					const editableOld = el.contentEditable;
 					const readOnlyOld = el.readOnly;
@@ -87,11 +83,9 @@ const CopyButton = ({ content, available }) => {
 		}
 
 		if (navigator.userAgent.match(/macintosh/i)) {
-			alert("safari mac 1");
 			try {
 				navigator.clipboard.writeText(content).then(
 					() => {
-						alert("safari mac 2");
 						/* Alert user text is copied */
 						setText(copiedText);
 						button.style.backgroundColor = "lightgreen";
@@ -108,35 +102,35 @@ const CopyButton = ({ content, available }) => {
 					}
 				);
 			} catch (error) {
-				alert("safari mac 3");
-
 				const el = document.createElement("textarea");
 				const editableOld = el.contentEditable;
 				const readOnlyOld = el.readOnly;
-				alert("safari mac 4");
-				range = document.createRange();
-				alert("safari mac 4.1");
+
+				if (window.getSelection && document.createRange) {
+					range = document.createRange();
+				}
+
 				el.contentEditable = "true";
-				alert("safari mac 4.2");
+
 				el.readOnly = "false";
-				alert("safari mac 4.2");
+
 				range.selectNodeContents(el);
-				alert("safari mac 5");
+
 				const s = window.getSelection();
 				s.removeAllRanges();
 				s.addRange(range);
 
 				el.setSelectionRange(0, 999999);
-				alert("safari mac 6");
+
 				el.contentEditable = editableOld;
 				el.readOnly = readOnlyOld;
-				alert("safari mac 7");
+
 				document.execCommand("copy");
-				alert("safari mac 8");
+
 				/* Alert user text is copied */
 				setText(copiedText);
 				button.style.backgroundColor = "lightgreen";
-				alert("safari mac 9");
+
 				setTimeout(() => {
 					setText(initialText);
 					button.style.backgroundColor = "";
