@@ -76,7 +76,7 @@ Gràcies! 🍻
 			<PhoneText>
 				{content.replace(/ \*/gi, " ").replace(/\* /gi, " ")}
 			</PhoneText>
-			<CopyButton content={content} available={formatOk} />
+			<CopyButton content={content} available={formatOk} hint="text" />
 		</PhoneTextWrapper>
 	);
 };

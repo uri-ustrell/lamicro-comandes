@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import CopyButtonWrapper from "../styles/CopyButtonWrapper";
 
-const CopyButton = ({ content, available }) => {
-	const initialText = "Ctrl+C";
-	const copiedText = "copiat!";
-	const badFormatText = "X";
+const initialText = "Ctrl+C";
+const copiedText = "copiat!";
+const badFormatText = "X";
+const neutralColor = "lightgray";
+const okColor = "lightgreen";
+const koColor = "tomato";
+
+const CopyButton = ({ content, available, hint }) => {
 	const [text, setText] = useState(initialText);
+	const [buttonColor, setButtonColor] = useState(neutralColor);
 
 	const copyText = (e) => {
-		const button = e.target;
 		if (!available) {
 			/* Alert user text is NOT copied */
 			setText(badFormatText);
-			button.style.backgroundColor = "tomato";
+			setButtonColor(koColor);
 
 			setTimeout(() => {
 				setText(initialText);
-				button.style.backgroundColor = "";
+				setButtonColor(neutralColor);
 			}, 3000);
 
 			return;
 		}
 
-		if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+		if (navigator.userAgent.match(/ipad|ipod|iphone|macintosh/i)) {
 			try {
 				navigator.clipboard.writeText(content).then(
 					() => {
 						/* Alert user text is copied */
 						setText(copiedText);
-						button.style.backgroundColor = "lightgreen";
+						setButtonColor(okColor);
 
 						setTimeout(() => {
 							setText(initialText);
-							button.style.backgroundColor = "";
+							setButtonColor(neutralColor);
 						}, 3000);
 					},
 					() => {
@@ -47,7 +51,7 @@ const CopyButton = ({ content, available }) => {
 					const editableOld = el.contentEditable;
 					const readOnlyOld = el.readOnly;
 
-					range = document.createRange();
+					const range = document.createRange();
 
 					el.contentEditable = "true";
 					el.readOnly = "false";
@@ -66,75 +70,17 @@ const CopyButton = ({ content, available }) => {
 
 					/* Alert user text is copied */
 					setText(copiedText);
-					button.style.backgroundColor = "lightgreen";
+					setButtonColor(okColor);
 
 					setTimeout(() => {
 						setText(initialText);
-						button.style.backgroundColor = "";
+						setButtonColor(neutralColor);
 					}, 3000);
 				} catch (e) {
 					alert(
 						"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
 					);
 				}
-			}
-
-			return;
-		}
-
-		if (navigator.userAgent.match(/macintosh/i)) {
-			try {
-				navigator.clipboard.writeText(content).then(
-					() => {
-						/* Alert user text is copied */
-						setText(copiedText);
-						button.style.backgroundColor = "lightgreen";
-
-						setTimeout(() => {
-							setText(initialText);
-							button.style.backgroundColor = "";
-						}, 3000);
-					},
-					() => {
-						alert(
-							"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
-						);
-					}
-				);
-			} catch (error) {
-				const el = document.createElement("textarea");
-				const editableOld = el.contentEditable;
-				const readOnlyOld = el.readOnly;
-
-				if (window.getSelection && document.createRange) {
-					range = document.createRange();
-				}
-
-				el.contentEditable = "true";
-
-				el.readOnly = "false";
-
-				range.selectNodeContents(el);
-
-				const s = window.getSelection();
-				s.removeAllRanges();
-				s.addRange(range);
-
-				el.setSelectionRange(0, 999999);
-
-				el.contentEditable = editableOld;
-				el.readOnly = readOnlyOld;
-
-				document.execCommand("copy");
-
-				/* Alert user text is copied */
-				setText(copiedText);
-				button.style.backgroundColor = "lightgreen";
-
-				setTimeout(() => {
-					setText(initialText);
-					button.style.backgroundColor = "";
-				}, 3000);
 			}
 
 			return;
@@ -147,11 +93,11 @@ const CopyButton = ({ content, available }) => {
 					() => {
 						/* Alert user text is copied */
 						setText(copiedText);
-						button.style.backgroundColor = "lightgreen";
+						setButtonColor(okColor);
 
 						setTimeout(() => {
 							setText(initialText);
-							button.style.backgroundColor = "";
+							setButtonColor(neutralColor);
 						}, 3000);
 					},
 					() => {
@@ -166,7 +112,13 @@ const CopyButton = ({ content, available }) => {
 		});
 	};
 
-	return <CopyButtonWrapper onClick={copyText}>{text}</CopyButtonWrapper>;
+	return (
+		<CopyButtonWrapper onClick={copyText} bgColor={buttonColor}>
+			{text === initialText && <smal>click</smal>}
+			<span>{text}</span>
+			{text === initialText && <small>{hint}</small>}
+		</CopyButtonWrapper>
+	);
 };
 
 export default CopyButton;

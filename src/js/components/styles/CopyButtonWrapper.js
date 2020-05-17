@@ -5,11 +5,11 @@ const CopyButtonWrapper = styled.div`
 	width: 50px;
 	height: 50px;
 	display: flex;
+	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	background-color: lightGray;
-	float: right;
+	background-color: ${({ bgColor }) => bgColor};
 	transform: rotate(-45deg);
 	padding: 10px;
 	position: absolute;
