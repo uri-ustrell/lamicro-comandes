@@ -54,7 +54,7 @@ const Message = ({ info }) => {
 					info.form.scheduleTakeAway.find(
 						(d) => d.day === info.form.selectedSchedule.day
 					).dayName
-			  }* \n  ⌚ a les *${time}H* `
+			  }* \n  ⌚ a les *${time}h* `
 			: "🗓️ Quan me les podeu portar?";
 
 	const content = `Hola,

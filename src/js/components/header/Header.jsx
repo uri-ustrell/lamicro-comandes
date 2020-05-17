@@ -74,7 +74,9 @@ const Header = () => {
 					<br />
 					Les entregues a domicili son:
 					<br />
-					<b>Dimecres tarda</b> i <b>Dissabte matí</b>.<br />
+					<b>Dimecres</b> de <b>16:30</b> a <b>20:30</b> i <b>Dissabte</b> de{" "}
+					<b>10:30</b> a <b>13:30</b>.
+					<br />
 					Només en l'àmbit territorial de <b>Sabadell i Barberà del Vallès</b>.
 					<br />
 					<br />

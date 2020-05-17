@@ -43,24 +43,18 @@ const initialState = {
 	scheduleTakeAway: [
 		{ day: 1, dayName: "dilluns", periods: [] },
 		{ day: 2, dayName: "dimarts", periods: [] },
-		{ day: 3, dayName: "dimecres", periods: [[17, 20]] },
-		{ day: 4, dayName: "dijous", periods: [[17, 20]] },
-		{ day: 5, dayName: "divendres", periods: [[17, 20]] },
+		{ day: 3, dayName: "dimecres", periods: [[15.5, 16.5]] },
+		{ day: 4, dayName: "dijous", periods: [] },
+		{ day: 5, dayName: "divendres", periods: [] },
 		{
 			day: 6,
 			dayName: "dissabte",
-			periods: [
-				[11, 13],
-				[17, 20],
-			],
+			periods: [[9, 10]],
 		},
 		{
 			day: 7,
 			dayName: "diumenge",
-			periods: [
-				[11, 13],
-				[17, 20],
-			],
+			periods: [],
 		},
 	],
 	cart: {
@@ -68,9 +62,9 @@ const initialState = {
 		recycledBottles: 0,
 		cost: 0,
 	},
-	selectedPayment: 1,
-	selectedDelivery: 1,
-	selectedSchedule: { day: 4, time: 17.5 },
+	selectedPayment: 3,
+	selectedDelivery: 2,
+	selectedSchedule: { day: 3, time: 15.5 },
 	adress: "",
 	message: "",
 	contact: { name: "La Microcervesaria", number: 699432572 },

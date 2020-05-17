@@ -10,9 +10,11 @@ export const choosePaymentMethod = (selectedPayment) => ({
 	selectedPayment,
 });
 
-export const choosePickUpTime = (selectedSchedule) => ({
-	type: types.CHOOSE_PICKUP_TIME,
-	selectedSchedule,
-});
+export const choosePickUpTime = (selectedSchedule) => {
+	return {
+		type: types.CHOOSE_PICKUP_TIME,
+		selectedSchedule,
+	};
+};
 
 export const inputAdress = (adress) => ({ type: types.INPUT_ADRESS, adress });

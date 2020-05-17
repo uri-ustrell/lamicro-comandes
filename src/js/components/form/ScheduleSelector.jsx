@@ -4,39 +4,46 @@ import FormSelectInput from "../styles/FormSelectInput";
 import FormSelectOption from "../styles/FormSelectOption";
 
 const PeriodOptions = (period) => {
-	const n = (period[1] - period[0]) * 2 - 1;
+	const h = (period[1] - period[0]) * 2 - 1;
+	let acc = period[0];
+	const end = period[1];
+	let options = [];
 
-	return [...Array(n)].map((_, i) => {
-		const { value, display } = calculateTimeValueAndDisplay(period[0], i);
+	while (acc <= end) {
+		options.push(acc);
+		acc += 0.5;
+	}
+
+	return options.map((value) => {
+		const display = ("" + value).replace(/\.5/gi, ":30");
 		return (
 			<FormSelectOption key={value} value={value}>
-				{display}
+				{display === "" + value ? display + ":00" : display}
 			</FormSelectOption>
 		);
 	});
 };
 
-const calculateTimeValueAndDisplay = (n, i) => {
-	let v = n + i;
-	const isEvenIndex = i % 2 === 0;
-	v = i !== 0 && isEvenIndex ? v - 1 : v;
-	const value = isEvenIndex ? v : v - 0.5;
-	const units = isEvenIndex ? v : v - 1;
-	const isDecimal = !isEvenIndex;
-
-	return { value, display: `${units}:${isDecimal ? "30" : "00"}` };
-};
-
 const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 	const [selectedDay, setSelectedDay] = useState(selected.day);
+	const [selectedTime, setSelectedTime] = useState(selected.time);
 
 	const handleDayChange = (e) => {
-		setSelectedDay(parseInt(e.target.value, 10));
+		const newDay = parseInt(e.target.value, 10);
+		setSelectedDay(newDay);
+		setSchedule({
+			day: newDay,
+			time: schedule.find((s) => s.day === newDay).periods[0][0],
+		});
 	};
 
-	const handleScheduleChange = (e) => {
-		setSchedule({ day: selectedDay, time: e.target.value });
+	const handleTimeChange = (e) => {
+		const newTime = parseFloat(e.target.value);
+		setSelectedTime(newTime);
+		setSchedule({ day: selectedDay, time: newTime });
 	};
+
+	const handleScheduleChange = () => {};
 
 	return (
 		<ButtonSelectorWrapper>
@@ -50,7 +57,7 @@ const ScheduleSelector = ({ schedule, setSchedule, selected }) => {
 						)
 				)}
 			</FormSelectInput>
-			<FormSelectInput onChange={handleScheduleChange}>
+			<FormSelectInput onChange={handleTimeChange} value={selectedTime}>
 				{schedule.find((s) => s.day === selectedDay).periods.map(PeriodOptions)}
 			</FormSelectInput>
 		</ButtonSelectorWrapper>
