@@ -15,6 +15,7 @@ const AddOrRemoveButton = styled.span`
 	top: -10px;
 	left: 9px;
 	z-index: 1;
+	box-shadow: 1px 1px 2px #777;
 `;
 
 export default AddOrRemoveButton;

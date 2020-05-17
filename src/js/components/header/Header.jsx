@@ -27,6 +27,7 @@ const Header = () => {
 					<br /> clica les ampolles{" "}
 					<AddOrRemoveButton overridePosition={true}>-</AddOrRemoveButton> del
 					resultat per restarles de la comanda.
+					<br />
 					<b>2.</b> copia el missatge creat (amb el botó{" "}
 					<CopyButtonWrapper
 						bgColor="lightgray"
@@ -58,7 +59,8 @@ const Header = () => {
 					<br />3 ampolles costen 15€.
 					<br />4 ampolles o més, s'afegeix 5€ per ampolla.
 					<br />
-					El cost de l'envàs és un <b>dipòsit</b> retornable de 1,5€ per{" "}
+					<br />
+					El cost de l'envàs és un <b>dipòsit retornable</b> de 1,5€ per{" "}
 					ampolla.
 					<br />
 					L'Ampolla és de <b>0,75L</b>.
@@ -69,9 +71,12 @@ const Header = () => {
 					Després d'enviar el missatge via <b>Whatsapp</b> o <b>Telegram</b>, us{" "}
 					confirmarem la comanda en el mateix xat.
 					<br />
-					Les entregues a domicili son <b>Dimecres tarda</b> i{" "}
-					<b>Dissabte matí</b>. Només en l'àmbit territorial de{" "}
-					<b>Sabadell i Barberà del Vallès</b>.
+					<br />
+					Les entregues a domicili son:
+					<br />
+					<b>Dimecres tarda</b> i <b>Dissabte matí</b>.<br />
+					Només en l'àmbit territorial de <b>Sabadell i Barberà del Vallès</b>.
+					<br />
 					<br />
 					Recomanem conservar la cervesa{" "}
 					<b>a la nevera un màxim d'una setmana</b>.
