@@ -27,7 +27,7 @@ const CartBeers = ({
 				<CartBottle
 					bottle={{
 						amount: recycledBottles,
-						name: "ampolla reciclada",
+						name: "ampolla de retorn",
 						color: "empty",
 						id: 0,
 					}}
