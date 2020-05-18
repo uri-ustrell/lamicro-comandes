@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CustomButton = styled.span`
 	padding: 10px;
 	font-size: 18px;
-	text-decoration: ${({ active }) => (active ? "" : "line-through")};
+	text-decoration: ${({ active }) => (active ? "underline" : "")};
 	text-decoration-color: var(--text-write-color);
 	color: ${({ active }) =>
 		active ? "var(--text-write-color)" : "var(--text-write-secondary-color)"};
