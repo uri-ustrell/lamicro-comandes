@@ -27,14 +27,14 @@ const initialState = {
 		{
 			id: 5,
 			name: "Porter",
-			description: "negre i torrefacta",
+			description: "negra i torrefacta",
 			color: "black",
 		},
 	],
 	paymentMethods: [
 		{ id: 1, name: "📱 bizzum" },
-		{ id: 2, name: "💳 targeta de crèdit" },
-		{ id: 3, name: "💵 metàlic" },
+		{ id: 2, name: "💳 targeta" },
+		{ id: 3, name: "💵 en efectiu" },
 	],
 	deliveryMethods: [
 		{ id: 1, name: "ho recullo a la Micro" },

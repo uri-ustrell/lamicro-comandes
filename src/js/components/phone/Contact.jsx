@@ -17,7 +17,7 @@ const Contact = () => (
 		</div>
 		<div>
 			<h2 style={{ fontSize: "16px", margin: 0, color: "#fff" }}>
-				La Microcervesaria
+				La MicroCervesaria
 			</h2>
 			<h3 style={{ fontSize: "14px", margin: 0, color: "#e8e8e8" }}>
 				699432572

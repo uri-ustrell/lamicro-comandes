@@ -20,15 +20,20 @@ const Header = () => {
 			</HeaderInfoButton>
 			{infoVisible && (
 				<HeaderInfo>
-					<b>1.</b> Prepara la teva comanda mitjançant les opcions,
+					<b className="active">1.</b>
+					<br />
+					Prepara la teva comanda mitjançant les opcions,
 					<br /> clica les ampolles{" "}
 					<AddOrRemoveButton overridePosition={true}>+</AddOrRemoveButton> per
 					afegir-les a la comanda.
 					<br /> clica les ampolles{" "}
 					<AddOrRemoveButton overridePosition={true}>-</AddOrRemoveButton> del
-					resultat per restarles de la comanda.
+					resultat per restar-les de la comanda.
 					<br />
-					<b>2.</b> copia el missatge creat (amb el botó{" "}
+					<br />
+					<b className="active">2.</b>
+					<br />
+					<b>copia el missatge</b> creat (amb el botó{" "}
 					<CopyButtonWrapper
 						bgColor="lightgray"
 						overridePosition={true}
@@ -38,7 +43,7 @@ const Header = () => {
 					</CopyButtonWrapper>
 					)
 					<br />
-					copia el contacte (amb el botó{" "}
+					<b>copia el contacte</b> (amb el botó{" "}
 					<CopyButtonWrapper
 						bgColor="lightgray"
 						overridePosition={true}
@@ -48,36 +53,47 @@ const Header = () => {
 					</CopyButtonWrapper>
 					)
 					<br />
-					<b>3.</b> i envia'l per <b>Whatsapp</b> al contacte de <b>La Micro</b>
-					.
+					<br />
+					<b className="active">3.</b>
+					<br />i envia'l per <b>Whatsapp</b> o <b>Telegram</b> al contacte de{" "}
+					<b>La Micro</b>.
+					<br />
 					<br />
 					<br />
 					Les ofertes funcionen de la següent manera:
 					<br />
-					Minim comanda de 2 ampolles.
-					<br />2 ampolles costen 11€.
-					<br />3 ampolles costen 15€.
-					<br />4 ampolles o més, s'afegeix 5€ per ampolla.
+					<span className="block-text">
+						Comanda mínima de 2 ampolles.
+						<br />2 ampolles costen 11€.
+						<br />3 ampolles costen 15€.
+						<br />4 ampolles o més, s'afegeix 5€ per ampolla.
+						<br />
+						<br />
+						El cost de l'envàs és un <b>dipòsit retornable</b> d'1,5€ per{" "}
+						ampolla.
+					</span>
 					<br />
 					<br />
-					El cost de l'envàs és un <b>dipòsit retornable</b> de 1,5€ per{" "}
-					ampolla.
+					L'ampolla és de <b> 0,75 litres</b>.
 					<br />
-					L'Ampolla és de <b>0,75L</b>.
 					<br />
-					Assegura't de completar bé la informació per poder copiar el missatge.
+					Assegura't de completar bé la comanda per a poder copiar el missatge.
 					<br />
 					<br />
 					Després d'enviar el missatge via <b>Whatsapp</b> o <b>Telegram</b>, us{" "}
 					confirmarem la comanda en el mateix xat.
 					<br />
 					<br />
-					Les entregues a domicili son:
+					Les entregues a domicili són:
 					<br />
-					<b>Dimecres</b> de <b>16:30</b> a <b>20:30</b> i <b>Dissabte</b> de{" "}
-					<b>10:30</b> a <b>13:30</b>.
-					<br />
-					Només en l'àmbit territorial de <b>Sabadell i Barberà del Vallès</b>.
+					<span className="block-text">
+						<b>Dimecres</b> de <b>16:30</b> a <b>20:30</b> i <b>dissabte</b> de{" "}
+						<b>10:30</b> a <b>13:30</b>.
+						<br />
+						<br />
+						Només en els termes municipals de{" "}
+						<b>Sabadell i Barberà del Vallès</b>.
+					</span>
 					<br />
 					<br />
 					Recomanem conservar la cervesa{" "}

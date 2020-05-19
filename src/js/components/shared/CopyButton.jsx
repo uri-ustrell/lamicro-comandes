@@ -118,7 +118,7 @@ const CopyButton = ({ content, available, hint }) => {
 
 	return (
 		<CopyButtonWrapper onClick={copyText} bgColor={buttonColor}>
-			{text === initialText && <small>click</small>}
+			{text === initialText && <small>clic</small>}
 			<span>{text}</span>
 			{text === initialText && <small>{hint}</small>}
 		</CopyButtonWrapper>

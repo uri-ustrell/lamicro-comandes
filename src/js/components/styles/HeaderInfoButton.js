@@ -2,18 +2,21 @@ import styled from "styled-components";
 
 const HeaderInfoButton = styled.div`
 	border: 3px solid var(--active-color);
-	border-radius: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-	width: 10px;
-	height: 10px;
+	width: 150px;
+	height: 30px;
 	padding: 10px;
 	align-self: stretch;
 	font-size: 18px;
 	font-weight: bold;
 	cursor: pointer;
+
+	&:hover {
+		background-color: var(--active-color);
+	}
 `;
 
 export default HeaderInfoButton;

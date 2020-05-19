@@ -17,6 +17,18 @@ const GlobalStyles = createGlobalStyle`
 		font-family: 'Roboto', sans-serif;
 		overflow-x: hidden;
 	}
+
+	b.active {
+		color: var(--active-color);
+		font-size:1.2em
+	}
+	
+	span.block-text {
+		display: inline-block;
+		border: 2px solid var(--active-color);
+		padding: 5px;
+		margin: 5px;
+	}
 `;
 
 export default GlobalStyles;
