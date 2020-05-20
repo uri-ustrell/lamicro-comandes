@@ -25,7 +25,7 @@ const Header = () => {
 					Prepara la teva comanda mitjançant les opcions,
 					<br /> clica les ampolles{" "}
 					<AddOrRemoveButton overridePosition={true}>+</AddOrRemoveButton> per
-					afegir-les a la comanda.
+					afegir-les a la comanda,
 					<br /> clica les ampolles{" "}
 					<AddOrRemoveButton overridePosition={true}>-</AddOrRemoveButton> del
 					resultat per restar-les de la comanda.
@@ -33,7 +33,7 @@ const Header = () => {
 					<br />
 					<b className="active">2.</b>
 					<br />
-					<b>copia el missatge</b> creat (amb el botó{" "}
+					<b>copia el missatge</b> clicant el botó{" "}
 					<CopyButtonWrapper
 						bgColor="lightgray"
 						overridePosition={true}
@@ -41,17 +41,6 @@ const Header = () => {
 					>
 						Copia
 					</CopyButtonWrapper>
-					)
-					<br />
-					<b>copia el contacte</b> (amb el botó{" "}
-					<CopyButtonWrapper
-						bgColor="lightgray"
-						overridePosition={true}
-						small={true}
-					>
-						Copia
-					</CopyButtonWrapper>
-					)
 					<br />
 					<br />
 					<b className="active">3.</b>
@@ -75,6 +64,19 @@ const Header = () => {
 					<br />
 					<br />
 					L'ampolla és de <b> 0,75 litres</b>.
+					<br />
+					<br />
+					Si no tens el contacte de La MicroCerveseria, <b>
+						copia el telèfon
+					</b>{" "}
+					clicant el botó{" "}
+					<CopyButtonWrapper
+						bgColor="lightgray"
+						overridePosition={true}
+						small={true}
+					>
+						Copia
+					</CopyButtonWrapper>
 					<br />
 					<br />
 					Assegura't de completar bé la comanda per a poder copiar el missatge.

@@ -43,6 +43,7 @@ const Message = ({ info }) => {
 	const payment = info.form.paymentMethods.find(
 		(p) => p.id === info.form.selectedPayment
 	).name;
+	const prepPay = info.form.selectedPayment < 3 ? "amb" : "";
 	const recycled =
 		info.cart.recycledBottles > 0
 			? `♻️ Torno *${info.cart.recycledBottles}* ampolles buides\n`
@@ -67,7 +68,7 @@ ${recycled}
 ${adress}
 ${when}
 
-Pagaré els *${info.cart.cost}€* amb *${payment}* 
+Pagaré els *${info.cart.cost}€* ${prepPay} *${payment}* 
 Gràcies! 🍻
 	`;
 
