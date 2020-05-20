@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CopyButtonWrapper from "../styles/CopyButtonWrapper";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const initialText = "Copia";
 const copiedText = "copiat!";
@@ -12,7 +13,7 @@ const CopyButton = ({ content, available, hint }) => {
 	const [text, setText] = useState(initialText);
 	const [buttonColor, setButtonColor] = useState(neutralColor);
 
-	const copyText = (e) => {
+	const copyText = (text, result) => {
 		if (!available) {
 			/* Alert user text is NOT copied */
 			setText(badFormatText);
@@ -30,98 +31,34 @@ const CopyButton = ({ content, available, hint }) => {
 			return;
 		}
 
-		if (navigator.userAgent.match(/ipad|ipod|iphone|macintosh/i)) {
-			try {
-				navigator.clipboard.writeText(content).then(
-					() => {
-						/* Alert user text is copied */
-						setText(copiedText);
-						setButtonColor(okColor);
+		if (result) {
+			setText(copiedText);
+			setButtonColor(okColor);
 
-						setTimeout(() => {
-							setText(initialText);
-							setButtonColor(neutralColor);
-						}, 3000);
-					},
-					() => {
-						alert(
-							"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
-						);
-					}
-				);
-			} catch (error) {
-				try {
-					const el = document.createElement("textarea");
-					const editableOld = el.contentEditable;
-					const readOnlyOld = el.readOnly;
-
-					const range = document.createRange();
-
-					el.contentEditable = "true";
-					el.readOnly = "false";
-					range.selectNodeContents(el);
-
-					const s = window.getSelection();
-					s.removeAllRanges();
-					s.addRange(range);
-
-					el.setSelectionRange(0, 999999);
-
-					el.contentEditable = editableOld;
-					el.readOnly = readOnlyOld;
-
-					document.execCommand("copy");
-
-					/* Alert user text is copied */
-					setText(copiedText);
-					setButtonColor(okColor);
-
-					setTimeout(() => {
-						setText(initialText);
-						setButtonColor(neutralColor);
-					}, 3000);
-				} catch (e) {
-					alert(
-						"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
-					);
-				}
-			}
-
-			return;
+			setTimeout(() => {
+				setText(initialText);
+				setButtonColor(neutralColor);
+			}, 3000);
+		} else {
+			alert(
+				"Lamentem que en aquest dispositiu no és possible copiar el text,\ntambé pots provar de fer una captura de pantalla."
+			);
 		}
 
-		navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-			if (result.state == "granted" || result.state == "prompt") {
-				/* write to the clipboard now */
-				navigator.clipboard.writeText(content).then(
-					() => {
-						/* Alert user text is copied */
-						setText(copiedText);
-						setButtonColor(okColor);
-
-						setTimeout(() => {
-							setText(initialText);
-							setButtonColor(neutralColor);
-						}, 3000);
-					},
-					() => {
-						alert(
-							"no es possible copiar el text en aquest dispositiu,\n si us plau feu-ho manualment."
-						);
-					}
-				);
-			}
-
-			return;
-		});
+		return;
 	};
 
 	return (
-		<CopyButtonWrapper onClick={copyText} bgColor={buttonColor}>
-			{text === initialText && <small>clic</small>}
-			<span>{text}</span>
-			{text === initialText && <small>{hint}</small>}
-		</CopyButtonWrapper>
+		<CopyToClipboard
+			text={(available && content) || "falta informació"}
+			onCopy={copyText}
+		>
+			<CopyButtonWrapper bgColor={buttonColor}>
+				{text === initialText && <small>clic</small>}
+				<span>{text}</span>
+				{text === initialText && <small>{hint}</small>}
+			</CopyButtonWrapper>
+		</CopyToClipboard>
 	);
 };
 
